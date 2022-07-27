@@ -70,7 +70,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rb: {fileID: 2159309838732211303}
   _direction: {x: 1.04, y: 0}
-  _speed: 10.41
+  _speed: 10
 --- !u!1 &2159309838757569127
 GameObject:
   m_ObjectHideFlags: 0

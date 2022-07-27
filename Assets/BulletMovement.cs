@@ -10,5 +10,5 @@ public class BulletMovement : MonoBehaviour
    
     private void Start() {
         _rb.velocity = _direction * _speed;    
-    } 
+    }
 }

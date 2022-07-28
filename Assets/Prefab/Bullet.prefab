@@ -54,7 +54,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!114 &-9014680817588092397
 MonoBehaviour:
@@ -70,7 +70,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rb: {fileID: 2159309838732211303}
   _direction: {x: 1.04, y: 0}
-  _speed: 10
+  _speed: 100
+  _lifeTime: 3
 --- !u!1 &2159309838757569127
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,12 +12,19 @@ public class BulletMovement : MonoBehaviour
     private void Start() {
         _rb.velocity = _direction * _speed;    
     }
-    private void Update()
-    {
-        if(Time.time >= _lifeTime)
-        {
-            GameObject.Destroy(gameObject);
-        }
+     void Awake() {
+        GameObject.Destroy(gameObject, _lifeTime);    
     }
+    
+    // public float spawnTime = Time.time;
+    // private void Update()
+    // {
+    //     Debug.Log(spawnTime);
+
+    //     if(Time.time >= _lifeTime + spawnTime)
+    //     {
+    //         GameObject.Destroy(gameObject);
+    //     }
+    // }
     
 }

@@ -6,6 +6,8 @@ public class BulletSwpaner : MonoBehaviour
 {
     [SerializeField] GameObject _bulletPrefab;
     [SerializeField] float _fireColdown;
+    
+    [Range(.1f, 2f)]
     [SerializeField] float _radiusFactor;
    
     float lastBullet;

@@ -38,6 +38,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: "Arri\xE8re Plan"
+    uniqueID: 4266034997
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Premier Plan
+    uniqueID: 2607439063
     locked: 0

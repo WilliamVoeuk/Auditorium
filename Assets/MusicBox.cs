@@ -9,6 +9,9 @@ public class MusicBox : MonoBehaviour
    [SerializeField] float _volumeRaisePerParticle;
    [SerializeField] float _volumeDecayPerSecond;
    [SerializeField] float _volumeDecayDelay;
+   [SerializeField] SpriteRenderer[] _volumeBars;
+   [SerializeField] Color _emptyColor;
+   [SerializeField] Color _fullColor;
     
     #endregion
 
@@ -28,7 +31,28 @@ public class MusicBox : MonoBehaviour
         {
             _volume = Mathf.Clamp01(_volume - _volumeDecayPerSecond * Time.deltaTime);
         }
+
         _audioSource.volume = _volume; 
+        UpdateRenderer();
+
+    }
+
+    void UpdateRenderer() {
+        int barsToActivate = Mathf.FloorToInt (_volumeBars.Length * _volume);
+        
+        for (int i = 0; i< _volumeBars.Length; i++ )
+        {
+            if( i < barsToActivate )
+            {
+                _volumeBars[i].color = _fullColor;
+            }
+            else
+            {
+                _volumeBars[i].color = _emptyColor;
+            }
+            
+
+        } 
     }
 
     void OnTriggerEnter2D(Collider2D collision) 
@@ -36,12 +60,7 @@ public class MusicBox : MonoBehaviour
         _volume = Mathf.Clamp01(_volume + _volumeRaisePerParticle);
 
         _StartDecayTime = Time.time + _volumeDecayDelay;
-        // _volume = Math.Clamp(_volume + _volumeRaisePerParticle, 0, 1);
-        // _volume += _volumeRaisePerParticle;
-        // if(_volume > 1)
-        // {
-        //     _volume = 1;
-        // }
+
     }
 
 

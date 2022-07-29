@@ -5,7 +5,7 @@ using UnityEngine;
 public class Effector : MonoBehaviour
 {
     [SerializeField] private Texture2D _mouseMoveTexture;
-    [SerializeField] private Texture2D _mouseResizeTexture;
+    // [SerializeField] private Texture2D _mouseResizeTexture;
     float effectorRadius = 1;
     private void OnMouseDrag() 
     {
@@ -15,16 +15,17 @@ public class Effector : MonoBehaviour
 
         if (Input.GetAxis("Mouse ScrollWheel") > 0f & effectorRadius < 3) 
         {
-            Cursor.SetCursor(_mouseResizeTexture, new Vector2(16f, 16f), CursorMode.Auto );
-            // Debug.Log("Sroll up");
+
             effectorRadius += 0.1f;
+            transform.GetComponent<AreaEffector2D>().forceMagnitude += 50;
         }
         else if (Input.GetAxis("Mouse ScrollWheel") < 0f & effectorRadius > 1 )
         {
-            Cursor.SetCursor(_mouseResizeTexture, new Vector2(16f, 16f), CursorMode.Auto );
+            // Cursor.SetCursor(_mouseResizeTexture, new Vector2(16f, 16f), CursorMode.Auto );
             // Debug.Log("Scroll down");
             effectorRadius -= 0.1f;
- 
+             transform.GetComponent<AreaEffector2D>().forceMagnitude -= 50;
+
         }
         transform.GetComponent<CircleShape>().Radius = effectorRadius;
         Debug.Log(effectorRadius);

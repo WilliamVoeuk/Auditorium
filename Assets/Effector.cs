@@ -21,14 +21,12 @@ public class Effector : MonoBehaviour
         }
         else if (Input.GetAxis("Mouse ScrollWheel") < 0f & effectorRadius > 1 )
         {
-            // Cursor.SetCursor(_mouseResizeTexture, new Vector2(16f, 16f), CursorMode.Auto );
-            // Debug.Log("Scroll down");
+
             effectorRadius -= 0.1f;
              transform.GetComponent<AreaEffector2D>().forceMagnitude -= 50;
 
         }
         transform.GetComponent<CircleShape>().Radius = effectorRadius;
-        Debug.Log(effectorRadius);
     }
     
 }

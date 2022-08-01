@@ -15,16 +15,4 @@ public class BulletMovement : MonoBehaviour
      void Awake() {
         GameObject.Destroy(gameObject, _lifeTime);    
     }
-    
-    // public float spawnTime = Time.time;
-    // private void Update()
-    // {
-    //     Debug.Log(spawnTime);
-
-    //     if(Time.time >= _lifeTime + spawnTime)
-    //     {
-    //         GameObject.Destroy(gameObject);
-    //     }
-    // }
-    
 }
